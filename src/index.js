@@ -3,11 +3,95 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
+
+import Layout from './components/Layout';
+import About from './page/About';
+import Contact from './page/contact';
+import User from './page/user';
+import ErrorPage from './components/ErrorPage';
+import { Counter } from './features/counter/Counter';
+import { UseState } from './app/hooks/UseState';
+import { UseEffect } from './app/hooks/UseEffect';
+import Home from './page/Home';
+import UserList from './page/user/UserList';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    // loader: rootLoader,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+        // loader: teamLoader,
+      },
+      {
+        path: "use-effect",
+        element: <UseEffect />,
+        // loader: teamLoader,
+      },
+      {
+        path: "use-state",
+        element: <UseState />,
+        // loader: teamLoader,
+      },
+      {
+        path: "about",
+        element: <About />,
+        // loader: teamLoader,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+        // loader: teamLoader,
+      },
+      {
+        path: "user-list",
+        element: <UserList />,
+        errorElement: <ErrorPage />,
+        // loader: teamLoader,
+      },
+
+      {
+        path: "user",
+        element: <User />,
+        errorElement: <ErrorPage />,
+        // loader: teamLoader,
+      },
+      
+      {
+        path: "user/:userid",
+        element: <User />,
+        errorElement: <ErrorPage />,
+        // loader: teamLoader,
+      },
+      {
+        path: "counter",
+        element: <Counter />,
+      
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+    {/* <App /> */}
+    <RouterProvider router={router} />
+  </Provider>,
   </React.StrictMode>
 );
 

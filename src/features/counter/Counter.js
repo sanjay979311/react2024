@@ -7,7 +7,7 @@ export function Counter() {
     const dispatch = useDispatch()
 
     return (
-        <div className='container'>
+        <div className='container '>
             <div class="mt-4 p-5 bg-primary text-white mt-5 mb-5 ">
                 <h1>Jumbotron Example</h1>
                 <hr />

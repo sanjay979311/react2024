@@ -25,11 +25,11 @@ const Header = () => {
                   Hooks
                 </a>
                 <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="/use-effect"> Use Effect</a></li>
-                  <li><a className="dropdown-item" href="/use-state"> Use State</a></li>
-                  <li><a className="dropdown-item" href="#">Use Ref </a></li>
+                <li><Link className="dropdown-item" to="/use-effect"> Use Effect</Link></li>
+                  <li><a className="dropdown-item" to="/use-state"> Use State</a></li>
+                  <li><a className="dropdown-item" to="#">Use Ref </a></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#"> Use Memo </a></li>
+                  <li><Link className="dropdown-item" to="/use-memo"> Use Memo </Link></li>
                   <li><a className="dropdown-item" href="#"> Use Callback </a></li>
                 </ul>
               </li>

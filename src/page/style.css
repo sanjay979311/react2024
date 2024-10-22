@@ -1,0 +1,22 @@
+.cf_videoshare_referral {
+
+    display: none !important;
+ 
+ }
+
+ .ytp-copylink-icon {
+    margin: auto;
+    width: 36px;
+    height: 36px;
+    display: none !important;
+}
+
+.iframe-wrapper {
+  height: 280px;
+  overflow: hidden;
+}
+
+.iframe-wrapper iframe {
+  height: 400px;
+  margin-top: -60px;
+}

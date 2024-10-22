@@ -19,10 +19,11 @@ import Contact from './page/contact';
 import User from './page/user';
 import ErrorPage from './components/ErrorPage';
 import { Counter } from './features/counter/Counter';
-import { UseState } from './app/hooks/UseState';
-import { UseEffect } from './app/hooks/UseEffect';
+import { UseState } from './app/hooks/use-state/UseState';
+import { UseEffect } from './app/hooks/use-effect/UseEffect';
 import Home from './page/Home';
 import UserList from './page/user/UserList';
+import UseMemo from './app/hooks/memo'
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
       {
         path: "use-state",
         element: <UseState />,
+        // loader: teamLoader,
+      },
+      {
+        path: "use-memo",
+        element: <UseMemo />,
         // loader: teamLoader,
       },
       {
